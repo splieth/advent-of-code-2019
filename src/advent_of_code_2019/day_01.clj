@@ -1,5 +1,15 @@
 (ns advent-of-code-2019.day-01
-  (:gen-class))
+  (:gen-class)
+  (:require [clojure.java.io :as io]))
+
+(defn load-input [file-name]
+  (with-open [rdr (-> file-name
+                      io/resource
+                      (clojure.java.io/reader))]
+    (->> rdr
+         line-seq
+         doall
+         (map #(Integer/parseInt %)))))
 
 ; part 1
 (defn fuel [mass]
