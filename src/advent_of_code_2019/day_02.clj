@@ -30,11 +30,11 @@
   (first (run-program (assoc input 1 noun 2 verb))))
 
 (defn part-2 [expected]
-  (for [noun (range 0 99)
-        verb (range 0 99)
-        :when (= (part-1 noun verb) expected)]
-    (str/join [noun verb])))
+  (first (for [noun (range 0 99)
+               verb (range 0 99)
+               :when (= (part-1 noun verb) expected)]
+           (str/join [noun verb]))))
 
 (defn solve []
   (println "Result for Day 2 / Part 1:" (part-1 12 2))
-  (println "Result for Day 2 / Part 2:" (first (part-2 19690720))))
+  (println "Result for Day 2 / Part 2:" (part-2 19690720)))
