@@ -4,5 +4,5 @@
             [advent-of-code-2019.day-02 :as day2]))
 
 (defn -main [& args]
-  (day1/solve (day1/load-input "day_01.txt"))
+  (day1/solve)
   (day2/solve))

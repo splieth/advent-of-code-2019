@@ -23,8 +23,9 @@
        rest
        (reduce +)))
 
-(defn solve [input]
-  (let [part1 (->> input
+(defn solve []
+  (let [input (load-input "day_01.txt")
+        part1 (->> input
                    (map fuel)
                    (reduce +))
         part2 (->> input
